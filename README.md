@@ -4,7 +4,7 @@ docker run hello-world:latest python hello.py
 
 # Linux system directories (Filesystem Hierarchy Standard):
 
-/usr/bin:
+`/usr/bin`:
 Directory for the executables that are accessed by all users (everybody have this directory in their $PATH). The main files of your Software will probably be here. You should never create a subdirectory under this folder.
 
 /bin
