@@ -5,7 +5,9 @@ docker run hello-world:latest python hello.py
 # Commands:
 $ docker rm $(docker ps -a -q)
 
-$ docker run -it --name vol-test -h CONTAINER -v /data debian /bin/bash
+$ docker volume create --name my-vol
+
+$ docker run -it --name vol-test-container -h CONTAINER -v my-vol:/data debian /bin/bash
 
 root@CONTAINER:/# ls /data
 
