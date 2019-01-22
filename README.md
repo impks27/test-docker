@@ -13,6 +13,8 @@ root@CONTAINER:/# ls /data
 
 root@CONTAINER:/# 
 
+$ docker run -it --name test-share-volume --volumes-from vol-test-container debian /bin/bash
+
 # Linux system directories (Filesystem Hierarchy Standard):
 
 `/usr/bin`:
