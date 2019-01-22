@@ -2,6 +2,15 @@
 
 docker run hello-world:latest python hello.py
 
+# Commands:
+$ docker rm $(docker ps -a -q)
+
+$ docker run -it --name vol-test -h CONTAINER -v /data debian /bin/bash
+
+root@CONTAINER:/# ls /data
+
+root@CONTAINER:/# 
+
 # Linux system directories (Filesystem Hierarchy Standard):
 
 `/usr/bin`:
@@ -27,17 +36,6 @@ Contains configuration files. If your Software uses several files, put them unde
 
 `/var`:
 The name comes from "variable", because everything that is under this directory changes frequently, and the package system (RPM) doesn't keep control of. Usually /var is mounted over a separate high-performance partition. In /var/log logfiles grow up. For web content we use /var/www, and so on.
-
-# Commands:
-$ docker rm $(docker ps -a -q)
-
-$ docker run -it --name vol-test -h CONTAINER -v /data debian /bin/bash
-root@CONTAINER:/# ls /data
-root@CONTAINER:/# 
-
-
-
-
 
 `/home`:
 Contains the user's (real human beings) home directories. Your Software package should never install files here (in installation time). If your business logic requires a special UNIX user (not a human being) to be created, you should assign him a home directory under /var or other place outside /home. Please, never forget that.
